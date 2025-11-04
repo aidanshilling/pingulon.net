@@ -1,8 +1,13 @@
 <script lang="ts">
 	import type { PageProps } from "./$types";
-	import { marked } from "marked";
 
 	let { data }: PageProps = $props();
 </script>
 
-<div>{@html marked.parse(data.story.body)}</div>
+<div>My Stories!</div>
+
+<div>
+	{#each data.stories as story}
+		<div><a href="/stories/{story.name}">{story.name}</a></div>
+	{/each}
+</div>

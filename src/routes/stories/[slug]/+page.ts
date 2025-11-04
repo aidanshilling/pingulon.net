@@ -1,17 +1,12 @@
 import { error } from '@sveltejs/kit';
 import type { PageLoad } from './$types';
 
-type Story = {
-	id: string;
-	name: string;
-}
-
 export const load: PageLoad = async ({ params }) => {
-	const res = await fetch(`http://localhost:1323/stories`);
+	const res = await fetch(`http://localhost:1323/stories/${params.slug}`);
 	if (!res.ok) throw new Error(`HTTP ${res.status}`);
-	const stories: Story[] = await res.json()
+	const story = await res.json()
 
-	return { stories };
+	return { story };
 
 	error(404, 'Not found');
 };
