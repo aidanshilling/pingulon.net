@@ -9,6 +9,10 @@
 	<link rel="icon" href={favicon} />
 </svelte:head>
 
+<div id="top-bar">
+	<div>pingulon.net</div>
+</div>
+
 <div id="layout">
 	<div id="nav">
 		{#each data.stories as story}
@@ -22,6 +26,11 @@
 
 <style>
 	div#layout {
+		display: flex;
+		flex-direction: row;
+	}
+
+	div#top-bar {
 		display: flex;
 		flex-direction: row;
 	}
