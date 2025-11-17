@@ -2,6 +2,16 @@
 	import favicon from "$lib/assets/favicon.svg";
 	import StoryCard from "$lib/StoryCard.svelte";
 	import type { LayoutProps } from "./$types";
+	import { page } from "$app/state";
+
+	const currentStory = $derived(
+		page.url.pathname.split("/").filter(Boolean).pop(),
+	);
+
+	// TODO: Remove this after done debugging state changes
+	$effect(() => {
+		console.log(currentStory);
+	});
 
 	let { data, children }: LayoutProps = $props();
 </script>
@@ -23,6 +33,7 @@
 					href="/stories/{story.name}"
 					name={story.name}
 					{idx}
+					selected={story.name === currentStory}
 				></StoryCard>
 			{/each}
 		</div>
@@ -36,6 +47,8 @@
 	div#layout {
 		display: flex;
 		flex-direction: row;
+		max-height: 100vh;
+		min-width: 100vh;
 	}
 
 	div#top-bar {
@@ -48,6 +61,7 @@
 
 	div#nav {
 		margin: 5px;
+		max-height: 90vh;
 	}
 
 	div#nav-title {
@@ -70,10 +84,13 @@
 	}
 
 	div#content {
+		height: 90vh;
+		width: 100%;
 		margin: 5px;
 		border-radius: 5px;
 		padding: 10px;
 		border: 1px solid black;
 		box-shadow: 0px 1px;
+		overflow: auto;
 	}
 </style>

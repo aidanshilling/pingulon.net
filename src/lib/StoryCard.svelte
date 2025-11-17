@@ -1,21 +1,25 @@
 <script>
-	let { href, name, idx } = $props();
+	let { href, name, idx, selected } = $props();
 </script>
 
-{#if idx > 0}
-	<div style="border-top: 1px solid black">
-		<a {href}>{name}</a>
-	</div>
-{:else}
-	<div>
-		<a {href}>{name}</a>
-	</div>
-{/if}
+<a class:non-top-card={idx > 0} class:selected {href}>
+	{name}
+</a>
 
 <style>
-	div {
+	a {
+		all: unset;
+		display: block;
 		padding: 10px;
 		height: 25px;
 		width: 225px;
+		background-color: rgba(0, 0, 0, 0);
+		cursor: pointer;
+	}
+	.non-top-card {
+		border-top: 1px solid black;
+	}
+	.selected {
+		background-color: rgba(225, 0, 0, 0.5);
 	}
 </style>
