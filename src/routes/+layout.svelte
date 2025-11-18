@@ -23,7 +23,7 @@
 </svelte:head>
 
 <div id="top-bar">
-	<div><span id="p">p</span>ingulon.net</div>
+	<a href="/"><span id="p">p</span>ingulon.net</a>
 </div>
 
 <div id="layout">
@@ -95,6 +95,11 @@
 		padding: 8px;
 		font-weight: bold;
 		box-shadow: 0px 2px;
+	}
+
+	a {
+		all: unset;
+		cursor: pointer;
 	}
 
 	div#nav-container {
