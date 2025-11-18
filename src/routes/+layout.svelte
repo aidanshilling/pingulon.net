@@ -12,9 +12,8 @@
 
 	$effect(() => {
 		document.body.style.backgroundImage = `url(${bgUrl})`;
+		console.log(currentStory);
 	});
-
-	$effect(() => {});
 
 	let { data, children }: LayoutProps = $props();
 </script>
@@ -33,10 +32,10 @@
 		<div id="nav-container">
 			{#each data.stories as story, idx}
 				<StoryCard
-					href="/stories/{story.name}"
+					href="/stories/{story.id}"
 					name={story.name}
 					{idx}
-					selected={story.name === currentStory}
+					selected={story.id === currentStory}
 				></StoryCard>
 			{/each}
 		</div>
