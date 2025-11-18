@@ -12,5 +12,10 @@
 	<div>{tag}</div>
 {/each}
 
-<div>{@html marked.parse("---")}</div>
 <div>{@html marked.parse(data.story.body)}</div>
+
+<style>
+	h1 {
+		margin: 0;
+	}
+</style>

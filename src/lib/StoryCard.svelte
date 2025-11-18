@@ -10,6 +10,8 @@
 	a {
 		all: unset;
 		display: block;
+		align-items: center;
+		justify-content: center;
 		padding: 10px;
 		height: 25px;
 		width: 225px;
@@ -20,6 +22,6 @@
 		border-top: 1px solid black;
 	}
 	.selected {
-		background-color: rgba(225, 0, 0, 0.5);
+		background-color: rgba(225, 0, 0, 0.1);
 	}
 </style>
