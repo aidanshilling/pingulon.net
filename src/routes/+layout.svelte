@@ -57,6 +57,7 @@
 		position: relative;
 		background-size: cover;
 		background-position: center;
+		background-color: rgba(84, 84, 90);
 	}
 
 	:global(body)::before {
@@ -117,7 +118,8 @@
 		justify-content: start;
 		height: fit-content;
 		box-shadow: 1px 2px;
-		overflow: auto;
+		overflow-y: auto;
+		overflow-x: hidden;
 	}
 
 	div#content {
