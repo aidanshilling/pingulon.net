@@ -27,6 +27,12 @@
 			return () =>
 				window.removeEventListener("resize", update);
 		});
+		const preloadBg = (url: string) => {
+			const img = new window.Image();
+			img.src = url;
+		};
+		preloadBg(bgUrl);
+		preloadBg(bgSmUrl);
 	}
 
 	$effect(() => {
@@ -42,6 +48,8 @@
 
 <svelte:head>
 	<link rel="icon" href={favicon} />
+	<link rel="preload" as="image" href={bgUrl} />
+	<link rel="preload" as="image" href={bgSmUrl} />
 </svelte:head>
 
 <div id="top-bar">
@@ -83,20 +91,15 @@
 	:global(html) {
 		font-family: "Inter", sans-serif;
 		height: 100vh;
+		padding-top: env(safe-area-inset-top, 0px);
 	}
 	:global(body) {
 		all: unset;
-		position: relative;
 		background-size: cover;
 		background-position: center;
 		background-color: rgba(84, 84, 90);
 		color: var(--text-color);
-	}
-
-	@media (max-width: 768px) {
-		:global(body) {
-			background-color: rgba(250, 250, 250, 1);
-		}
+		padding-top: env(safe-area-inset-top, 0px);
 	}
 
 	:global(body)::before {
