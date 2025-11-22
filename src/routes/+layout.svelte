@@ -17,15 +17,6 @@
 
 	if (browser) {
 		onMount(() => {
-			document.body.style.setProperty(
-				"--bg-url",
-				`url('${bgUrl}')`,
-			);
-			document.body.style.setProperty(
-				"--bg-sm-url",
-				`url('${bgSmUrl}')`,
-			);
-
 			const update = () => {
 				isMobile.set(window.innerWidth < 768); // your breakpoint
 			};
@@ -42,6 +33,20 @@
 		};
 		preloadBg(bgUrl);
 		preloadBg(bgSmUrl);
+
+		document.body.style.setProperty("--bg-url", `url('${bgUrl}')`);
+		document.body.style.setProperty(
+			"--bg-sm-url",
+			`url('${bgSmUrl}')`,
+		);
+
+		if (window.innerWidth < 768) {
+			document.body.style.backgroundImage = `url("${bgSmUrl}")`;
+		} else {
+			document.body.style.backgroundImage = `url("${bgUrl}")`;
+		}
+
+		document.body.classList.add("bg-loaded");
 	}
 
 	let { data, children }: LayoutProps = $props();
@@ -100,7 +105,8 @@
 		padding: 0;
 	}
 	:global(body) {
-		all: unset;
+		margin: 0;
+		padding: 0;
 		width: 100vw;
 		background-size: cover;
 		background-position: center;
@@ -110,6 +116,15 @@
 		color: var(--text-color);
 	}
 
+	:global(body.bg-loaded) {
+		opacity: 1;
+		transition: opacity 0.2s ease-out;
+	}
+
+	:global(body:not(.bg-loaded)) {
+		opacity: 0; /* optional fade-in */
+	}
+
 	@media (max-width: 768px) {
 		:global(body) {
 			background-color: rgba(0, 0, 0, 1);
@@ -117,14 +132,14 @@
 		}
 	}
 
-	:global(body)::before {
-		content: "";
-		position: fixed;
-		inset: 0;
-		pointer-events: none;
-		z-index: -1; /* stays behind content */
-		background: rgba(255, 255, 255, 0.05);
-	}
+	/* :global(body)::before { */
+	/* 	content: ""; */
+	/* 	position: fixed; */
+	/* 	inset: 0; */
+	/* 	pointer-events: none; */
+	/* 	z-index: -1; /* stays behind content */
+	/* 	background: rgba(255, 255, 255, 0.05); */
+	/* } */
 
 	div#layout {
 		display: flex;
