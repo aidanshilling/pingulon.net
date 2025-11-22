@@ -1,7 +1,7 @@
 import type { LayoutLoad } from './$types';
 import { error } from '@sveltejs/kit';
 
-type Story = {
+export type Story = {
 	id: string;
 	name: string;
 }
