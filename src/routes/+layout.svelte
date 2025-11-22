@@ -102,6 +102,12 @@
 		padding-top: env(safe-area-inset-top, 0px);
 	}
 
+	@media (max-width: 768px) {
+		:global(body) {
+			background-color: rgba(0, 0, 0, 1);
+		}
+	}
+
 	:global(body)::before {
 		content: "";
 		position: fixed;
