@@ -95,7 +95,7 @@
 
 	@media (max-width: 768px) {
 		:global(body) {
-			background-color: rgba(65, 114, 70, 1);
+			background-color: rgba(50, 89, 54, 1);
 		}
 	}
 
