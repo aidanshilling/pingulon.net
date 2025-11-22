@@ -34,18 +34,8 @@
 		preloadBg(bgUrl);
 		preloadBg(bgSmUrl);
 
-		document.body.style.setProperty("--bg-url", `url('${bgUrl}')`);
-		document.body.style.setProperty(
-			"--bg-sm-url",
-			`url('${bgSmUrl}')`,
-		);
-
-		if (window.innerWidth < 768) {
-			document.body.style.backgroundImage = `url("${bgSmUrl}")`;
-		} else {
-			document.body.style.backgroundImage = `url("${bgUrl}")`;
-		}
-
+		const url = window.innerWidth < 768 ? bgSmUrl : bgUrl;
+		document.body.style.backgroundImage = `url("${url}")`;
 		document.body.classList.add("bg-loaded");
 	}
 
@@ -92,7 +82,7 @@
 
 <style>
 	:root {
-		--bg-color: rgba(255, 255, 255, 0);
+		--bg-color: rgba(180, 255, 250, 0.05);
 		--shadow-color: black;
 		--text-color: black;
 	}
@@ -111,8 +101,7 @@
 		background-size: cover;
 		background-position: center;
 		background-repeat: repeat;
-		background-color: rgba(84, 84, 90);
-		background-image: var(--bg-url);
+		background-color: rgba(0, 0, 0, 1);
 		color: var(--text-color);
 	}
 
@@ -122,24 +111,8 @@
 	}
 
 	:global(body:not(.bg-loaded)) {
-		opacity: 0; /* optional fade-in */
+		opacity: 0;
 	}
-
-	@media (max-width: 768px) {
-		:global(body) {
-			background-color: rgba(0, 0, 0, 1);
-			background-image: var(--bg-sm-url);
-		}
-	}
-
-	/* :global(body)::before { */
-	/* 	content: ""; */
-	/* 	position: fixed; */
-	/* 	inset: 0; */
-	/* 	pointer-events: none; */
-	/* 	z-index: -1; /* stays behind content */
-	/* 	background: rgba(255, 255, 255, 0.05); */
-	/* } */
 
 	div#layout {
 		display: flex;
@@ -154,9 +127,11 @@
 		margin-right: 8px;
 		font-weight: bold;
 		height: 5vh;
+		font-size: 18pt;
 	}
+
 	#p {
-		font-size: 24pt;
+		font-size: 32pt;
 	}
 
 	div#nav {
@@ -176,7 +151,7 @@
 		font-weight: bold;
 		box-shadow: 1px 2px var(--shadow-color);
 		background-color: var(--bg-color);
-		backdrop-filter: blur(20px);
+		backdrop-filter: blur(100px);
 		-webkit-backdrop-filter: blur(20px); /* for Safari */
 	}
 
