@@ -91,12 +91,17 @@
 	:global(html) {
 		font-family: "Inter", sans-serif;
 		height: 100vh;
-		padding-top: env(safe-area-inset-top, 0px);
+		min-height: 100vh;
+		width: 100vw;
+		margin: 0;
+		padding: 0;
 	}
 	:global(body) {
 		all: unset;
+		width: 100vw;
 		background-size: cover;
 		background-position: center;
+		background-repeat: repeat;
 		background-color: rgba(84, 84, 90);
 		color: var(--text-color);
 	}
