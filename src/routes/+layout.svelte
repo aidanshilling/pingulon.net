@@ -3,7 +3,7 @@
 	import StoryCard from "$lib/StoryCard.svelte";
 	import type { LayoutProps } from "./$types";
 	import { page } from "$app/state";
-	import bgUrl from "$lib/assets/bg.jpg";
+	import bgUrl from "$lib/assets/bg.webp";
 	import { browser } from "$app/environment";
 
 	import { onMount } from "svelte";
