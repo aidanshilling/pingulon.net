@@ -93,6 +93,12 @@
 		color: var(--text-color);
 	}
 
+	@media (max-width: 768px) {
+		:global(body) {
+			background-color: rgba(65, 114, 70, 1);
+		}
+	}
+
 	:global(body)::before {
 		content: "";
 		position: fixed;
