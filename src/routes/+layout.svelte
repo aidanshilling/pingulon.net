@@ -4,6 +4,7 @@
 	import type { LayoutProps } from "./$types";
 	import { page } from "$app/state";
 	import bgUrl from "$lib/assets/bg.webp";
+	import bgSmUrl from "$lib/assets/bg-small.webp";
 	import { browser } from "$app/environment";
 
 	import { onMount } from "svelte";
@@ -13,10 +14,6 @@
 	const currentStory = $derived(
 		page.url.pathname.split("/").filter(Boolean).pop(),
 	);
-
-	$effect(() => {
-		document.body.style.backgroundImage = `url(${bgUrl})`;
-	});
 
 	if (browser) {
 		onMount(() => {
@@ -31,6 +28,12 @@
 				window.removeEventListener("resize", update);
 		});
 	}
+
+	$effect(() => {
+		document.body.style.backgroundImage = $isMobile
+			? `url(${bgSmUrl})`
+			: `url(${bgUrl})`;
+	});
 
 	let { data, children }: LayoutProps = $props();
 	let count: Number = $state(data.stories.length);
