@@ -17,7 +17,7 @@
 				href="/stories/{story.id}"
 				name={story.name}
 				{idx}
-				selected={idx == 1}
+				selected={false}
 			></StoryCard>
 		{/each}
 	</div>
