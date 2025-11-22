@@ -127,11 +127,10 @@
 		margin-right: 8px;
 		font-weight: bold;
 		height: 5vh;
-		font-size: 18pt;
 	}
 
 	#p {
-		font-size: 32pt;
+		font-size: 24pt;
 	}
 
 	div#nav {
@@ -152,7 +151,7 @@
 		box-shadow: 1px 2px var(--shadow-color);
 		background-color: var(--bg-color);
 		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(20px); /* for Safari */
+		-webkit-backdrop-filter: blur(100px); /* for Safari */
 	}
 
 	a {
@@ -171,8 +170,8 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		background-color: var(--bg-color);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px); /* for Safari */
+		backdrop-filter: blur(100px);
+		-webkit-backdrop-filter: blur(100px); /* for Safari */
 	}
 
 	div#content {
@@ -185,7 +184,7 @@
 		box-shadow: 1px 2px var(--shadow-color);
 		overflow: auto;
 		background-color: var(--bg-color);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px); /* for Safari */
+		backdrop-filter: blur(100px);
+		-webkit-backdrop-filter: blur(100px); /* for Safari */
 	}
 </style>
