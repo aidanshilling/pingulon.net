@@ -17,6 +17,15 @@
 
 	if (browser) {
 		onMount(() => {
+			document.body.style.setProperty(
+				"--bg-url",
+				`url('${bgUrl}')`,
+			);
+			document.body.style.setProperty(
+				"--bg-sm-url",
+				`url('${bgSmUrl}')`,
+			);
+
 			const update = () => {
 				isMobile.set(window.innerWidth < 768); // your breakpoint
 			};
@@ -34,12 +43,6 @@
 		preloadBg(bgUrl);
 		preloadBg(bgSmUrl);
 	}
-
-	$effect(() => {
-		document.body.style.backgroundImage = $isMobile
-			? `url(${bgSmUrl})`
-			: `url(${bgUrl})`;
-	});
 
 	let { data, children }: LayoutProps = $props();
 	let count: Number = $state(data.stories.length);
@@ -103,12 +106,14 @@
 		background-position: center;
 		background-repeat: repeat;
 		background-color: rgba(84, 84, 90);
+		background-image: var(--bg-url);
 		color: var(--text-color);
 	}
 
 	@media (max-width: 768px) {
 		:global(body) {
 			background-color: rgba(0, 0, 0, 1);
+			background-image: var(--bg-sm-url);
 		}
 	}
 
