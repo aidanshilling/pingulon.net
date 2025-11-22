@@ -4,8 +4,7 @@ export const load: PageLoad = async ({ fetch, params }) => {
 	// TODO: Add reqest to /stories to check that params.slug actually exists
 	// before allowing the user to make a query to prevent malicious input
 
-	console.log(params.slug);
-	const res = await fetch(`http://localhost:1323/stories/id/${params.slug}`);
+	const res = await fetch(`https://pingulon-com-api-826899925004.us-east4.run.app/stories/id/${params.slug}`);
 	if (!res.ok) throw new Error(`HTTP ${res.status}`);
 	const story = await res.json()
 

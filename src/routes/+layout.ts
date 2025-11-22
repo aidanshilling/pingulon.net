@@ -7,7 +7,7 @@ type Story = {
 }
 
 export const load: LayoutLoad = async ({ fetch, params }) => {
-	const res = await fetch(`http://localhost:1323/stories`);
+	const res = await fetch(`https://pingulon-com-api-826899925004.us-east4.run.app/stories`);
 	if (!res.ok) throw error(res.status, `HTTP ${res.status}`);
 	const stories: Story[] = await res.json()
 

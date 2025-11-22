@@ -12,7 +12,6 @@
 
 	$effect(() => {
 		document.body.style.backgroundImage = `url(${bgUrl})`;
-		console.log(currentStory);
 	});
 
 	let { data, children }: LayoutProps = $props();
@@ -52,6 +51,7 @@
 <style>
 	:global(html) {
 		font-family: "Inter", sans-serif;
+		height: 100vh;
 	}
 	:global(body) {
 		position: relative;
@@ -129,8 +129,10 @@
 		border-radius: 10px;
 		padding: 10px;
 		border: 2px solid black;
-		box-shadow: 1px 2px;
+		box-shadow: 1px 2px 0 0 black;
 		overflow: auto;
+		/* color: rgba(221, 209, 191, 1); */
+		/* background-color: rgba(42, 34, 24, 0.5); */
 	}
 
 	@media (max-width: 600px) {
@@ -148,12 +150,13 @@
 		div#layout {
 			display: flex;
 			flex-direction: column;
-			max-height: 90vh;
+			max-height: 100vh;
 			min-width: 100vw;
 			max-width: 100vw;
 		}
 		div#content {
 			width: auto;
+			height: auto;
 		}
 		div#nav {
 			max-height: 20vh;
