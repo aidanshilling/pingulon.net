@@ -23,7 +23,7 @@
 		/* background-color: rgba(100, 0, 00, 0.1); */
 	}
 	.non-top-card {
-		border-top: 1px solid black;
+		border-top: 1px solid;
 	}
 	.selected {
 		/* background-color: rgba(225, 0, 0, 0.1); */

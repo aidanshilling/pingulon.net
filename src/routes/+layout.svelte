@@ -3,8 +3,8 @@
 	import StoryCard from "$lib/StoryCard.svelte";
 	import type { LayoutProps } from "./$types";
 	import { page } from "$app/state";
-	import bgUrl from "$lib/assets/bg3.svg";
-	//import bgUrl from "$lib/assets/bg.jpg";
+	//import bgUrl from "$lib/assets/bg3.svg";
+	import bgUrl from "$lib/assets/bg.jpg";
 
 	const currentStory = $derived(
 		page.url.pathname.split("/").filter(Boolean).pop(),
@@ -58,6 +58,7 @@
 		background-size: cover;
 		background-position: center;
 		background-color: rgba(84, 84, 90);
+		color: black;
 	}
 
 	:global(body)::before {
@@ -66,7 +67,7 @@
 		inset: 0;
 		pointer-events: none;
 		z-index: -1; /* stays behind content */
-		/* background: rgba(255, 255, 255, 0.1); */
+		background: rgba(255, 255, 255, 0.05);
 	}
 
 	div#layout {
@@ -98,11 +99,14 @@
 		flex-direction: row;
 		justify-content: space-between;
 		border-radius: 10px;
-		border: 2px solid black;
+		border: 2px solid;
 		margin-bottom: 5px;
 		padding: 8px;
 		font-weight: bold;
 		box-shadow: 1px 2px;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px); /* for Safari */
 	}
 
 	a {
@@ -114,12 +118,15 @@
 		display: flex;
 		flex-direction: column;
 		border-radius: 10px;
-		border: 2px solid black;
+		border: 2px solid;
 		justify-content: start;
 		height: fit-content;
 		box-shadow: 1px 2px;
 		overflow-y: auto;
 		overflow-x: hidden;
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px); /* for Safari */
 	}
 
 	div#content {
@@ -128,11 +135,12 @@
 		margin: 5px;
 		border-radius: 10px;
 		padding: 10px;
-		border: 2px solid black;
-		box-shadow: 1px 2px 0 0 black;
+		border: 2px solid;
+		box-shadow: 1px 2px;
 		overflow: auto;
-		/* color: rgba(221, 209, 191, 1); */
-		/* background-color: rgba(42, 34, 24, 0.5); */
+		background-color: rgba(255, 255, 255, 0);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px); /* for Safari */
 	}
 
 	@media (max-width: 600px) {

@@ -43,7 +43,7 @@
 		padding: 4px;
 		font-size: 8pt;
 		width: fit-content;
-		border: 1px solid black;
+		border: 1px solid;
 		margin-right: 4px;
 		margin-top: 4px;
 	}
@@ -51,7 +51,7 @@
 	div#tags {
 		display: flex;
 		flex-direction: row;
-		border-bottom: 1px solid black;
+		border-bottom: 1px solid;
 		padding-bottom: 16px;
 	}
 	div#title {
