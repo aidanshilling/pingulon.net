@@ -99,7 +99,6 @@
 		background-position: center;
 		background-color: rgba(84, 84, 90);
 		color: var(--text-color);
-		padding-top: env(safe-area-inset-top, 0px);
 	}
 
 	@media (max-width: 768px) {
