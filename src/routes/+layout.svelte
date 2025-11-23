@@ -183,7 +183,7 @@
 	}
 
 	div#content {
-		max-height: fit-content;
+		height: fit-content;
 		width: 100%;
 		margin: 5px;
 		border-radius: 10px;
