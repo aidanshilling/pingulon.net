@@ -184,6 +184,7 @@
 
 	div#content {
 		height: fit-content;
+		max-height: auto;
 		width: 100%;
 		margin: 5px;
 		border-radius: 10px;
