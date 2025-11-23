@@ -184,9 +184,10 @@
 
 	div#content {
 		height: fit-content;
-		max-height: auto;
+		max-height: 90vh;
 		width: 100%;
 		margin: 5px;
+		margin-right: 10px;
 		border-radius: 10px;
 		padding: 10px;
 		border: 2px solid var(--text-color);
