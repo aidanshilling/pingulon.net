@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-	<link rel="icon" href={favicon} />
+	<link rel="icon" href={favicon + `?v=2`} />
 	<link rel="preload" as="image" href={bgUrl} />
 	<link rel="preload" as="image" href={bgSmUrl} />
 </svelte:head>
