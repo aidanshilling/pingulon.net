@@ -5,6 +5,7 @@
 	import { page } from "$app/state";
 	import bgUrl from "$lib/assets/bg.webp";
 	import bgSmUrl from "$lib/assets/bg-small.webp";
+	import penguin from "$lib/assets/favicon.svg";
 	import { browser } from "$app/environment";
 
 	import { onMount } from "svelte";
@@ -51,6 +52,7 @@
 </svelte:head>
 
 <div id="top-bar">
+	<img src={penguin} alt="Pingulon logo." />
 	<a href="/"><span id="p">p</span>ingulon.net</a>
 </div>
 
@@ -123,10 +125,16 @@
 	div#top-bar {
 		display: flex;
 		flex-direction: row;
-		margin-left: 8px;
 		margin-right: 8px;
 		font-weight: bold;
+		align-items: flex-start;
 		height: 5vh;
+		justify-content: left;
+		align-items: center;
+	}
+	img {
+		margin-top: 10px;
+		max-width: 30pt;
 	}
 
 	#p {
