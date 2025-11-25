@@ -25,8 +25,7 @@
 			update();
 			window.addEventListener("resize", update);
 
-			return () =>
-				window.removeEventListener("resize", update);
+			return () => window.removeEventListener("resize", update);
 		});
 		const preloadBg = (url: string) => {
 			const img = new window.Image();
@@ -69,8 +68,7 @@
 						href="/stories/{story.id}"
 						name={story.name}
 						{idx}
-						selected={story.id ===
-							currentStory}
+						selected={story.id === currentStory}
 					></StoryCard>
 				{/each}
 			</div>
@@ -87,6 +85,7 @@
 		--bg-color: rgba(180, 255, 250, 0.15);
 		--shadow-color: black;
 		--text-color: black;
+		--blur-radius: 100px;
 	}
 	:global(html) {
 		font-family: "Inter", sans-serif;
@@ -158,8 +157,8 @@
 		font-weight: bold;
 		box-shadow: 1px 2px var(--shadow-color);
 		background-color: var(--bg-color);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(100px); /* for Safari */
+		backdrop-filter: blur(var(--blur-radius));
+		-webkit-backdrop-filter: blur(var(--blur-radius));
 	}
 
 	a {
@@ -178,8 +177,8 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		background-color: var(--bg-color);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(100px); /* for Safari */
+		backdrop-filter: blur(var(--blur-radius));
+		-webkit-backdrop-filter: blur(var(--blur-radius));
 	}
 
 	div#content {
@@ -194,7 +193,7 @@
 		box-shadow: 1px 2px var(--shadow-color);
 		overflow: auto;
 		background-color: var(--bg-color);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(100px); /* for Safari */
+		backdrop-filter: blur(var(--blur-radius));
+		-webkit-backdrop-filter: blur(var(--blur-radius));
 	}
 </style>

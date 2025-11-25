@@ -37,8 +37,8 @@
 		font-weight: bold;
 		box-shadow: 1px 2px var(--shadow-color);
 		background-color: var(--bg-color);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(100px); /* for Safari */
+		backdrop-filter: blur(var(--blur-radius));
+		-webkit-backdrop-filter: blur(var(--blur-radius));
 	}
 
 	div#story-list {
@@ -52,8 +52,8 @@
 		overflow-y: auto;
 		overflow-x: hidden;
 		background-color: var(--bg-color);
-		backdrop-filter: blur(100px);
-		-webkit-backdrop-filter: blur(100px); /* for Safari */
+		backdrop-filter: blur(var(--blur-radius));
+		-webkit-backdrop-filter: blur(var(--blur-radius));
 	}
 	div#welcome {
 		margin-bottom: 10px;
