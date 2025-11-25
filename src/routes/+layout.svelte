@@ -84,7 +84,7 @@
 
 <style>
 	:root {
-		--bg-color: rgba(180, 255, 250, 0.2);
+		--bg-color: rgba(180, 255, 250, 0.15);
 		--shadow-color: black;
 		--text-color: black;
 	}
